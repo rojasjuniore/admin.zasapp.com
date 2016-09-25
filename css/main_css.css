@@ -1,0 +1,12 @@
+body{
+	background: #ddd;
+	
+}
+#principal_body{
+	background: white;
+	border: 1px solid #111;
+	padding: 10px 20px
+	width: 600px;
+	margin: auto;
+}
+
