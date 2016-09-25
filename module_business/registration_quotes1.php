@@ -172,8 +172,12 @@ if (empty($id_cliente)) {
                         <div class="pull-right">
                             <a href="#myModal" role="button" class="btn" data-toggle="modal"><i
                                     class="icon-plus"></i> Agregar productos</a>
-                            <button type="submit" class="btn btn-default"><i class="icon-print"></i>
-                                Imprimir
+                            <!--<button class="btn btn-default"><i class="icon-print"></i>
+                                 Imprimir
+                             </button>-->
+                            <button>
+                                <a href="request_db/quotation_pdf.php" target="_blank"
+                                   class="btn btn-default">Enviar</a>
                             </button>
                         </div>
                         </fieldset>

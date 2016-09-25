@@ -62,7 +62,7 @@ $result = $mysqli->query($sql);
                 <th>Clave</th>
                 <th>Comision</th>
                 <th>Editar</th>
-                <th>Eliminar</th>
+                <th>Ventas</th>
             </tr>
             </thead>
             <tbody>
@@ -75,7 +75,7 @@ $result = $mysqli->query($sql);
                     <td><?php echo $row['clave_vendedor']; ?></td>
                     <td><?php echo $row['comision_vendedor']; ?></td>
                     <td><?php echo '<a href="../module_change/modify_seller.php?id=' . $row["id_vendedor"] . '">Editar</a>'; ?></td>
-                    <td><?php echo '<a href="#?id=' . $row["id_vendedor"] . '">Compras</a>'; ?></td>
+                    <td><?php echo '<a href="#?id=' . $row["id_vendedor"] . '">Ventas</a>'; ?></td>
                 </tr>
             <?php } ?>
             </tbody>

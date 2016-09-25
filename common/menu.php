@@ -61,9 +61,10 @@ $base_url = BASE_URL;
                             cotizaciones<span
                                 class="icon-cart"></span></a>
                     </li>
-                    <li><a href="<?php echo $base_url; ?>/module_business/consult_budget.php">consultar Presupuesto<span
+                    <li><a href="<?php echo $base_url; ?>/module_business/consult_budget.php">Consultar
+                            Cotizaciones<span
                                 class="icon-search"></span></a>
-                    <li><a href="<?php echo $base_url; ?>/module_business/consulting_contract.php">consultar
+                    <li><a href="<?php echo $base_url; ?>/module_business/consulting_contract.php">Consultar
                             Contratos<span
                                 class="icon-book"></span></a>
                 </ul>

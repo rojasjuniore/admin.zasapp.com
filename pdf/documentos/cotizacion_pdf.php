@@ -1,10 +1,15 @@
 <?php
 session_start();
-include("../../common/connect_db.php");
+include('../../common/_setup.php');
 echo error_reporting(E_ALL);
 $session_id = session_id();
-$sql_count = mysql_query("select * from tmp_cotizacion where session_id='" . $session_id . "'") or die(mysql_error());
-$count = mysql_num_rows($sql_count);
+mysqli_select_db($cnx, 'tmp_cotizacion');
+$query = "SELECT * 
+            FROM tmp_cotizacion
+            WHERE session_id='" . $session_id . "'
+            " or die(mysqli_connect_error());
+//$sql_count = mysql_query("select * from tmp_cotizacion where session_id='" . $session_id . "'") or die(mysql_error());
+$query = mysql_num_rows($sql_count);
 if ($count == 0) {
     echo "<script>alert('No hay productos agregados a la cotizacion')</script>";
     echo "<script>window.close();</script>";

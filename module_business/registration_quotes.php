@@ -38,7 +38,8 @@ if (@!$_SESSION['nombre_vendedor']) {
                 <div class="block">
                     <div class="block-content collapse in">
                         <div class="span12">
-                            <form class="form-horizontal" id="datos_cotizacion">
+                            <!--<form class="form-horizontal" id="datos_cotizacion">-->
+                            <form class="form-horizontal">
                                 <fieldset>
                                     <div class="control-group">
                                         <label class="control-label">Vendedor</label>
@@ -137,8 +138,13 @@ if (@!$_SESSION['nombre_vendedor']) {
                         <div class="pull-right">
                             <a href="#myModal" role="button" class="btn" data-toggle="modal"><i
                                     class="icon-plus"></i> Agregar productos</a>
-                            <button type="submit" class="btn btn-default"><i class="icon-print"></i>
+
+                            <!--<button class="btn btn-default"><i class="icon-print"></i>
                                 Imprimir
+                            </button>-->
+                            <button>
+                                <a href="request_db/quotation_pdf.php" target="_blank"
+                                   class="btn btn-default">Enviar</a>
                             </button>
                         </div>
                         </fieldset>

@@ -3,10 +3,20 @@ session_start();
 if (@!$_SESSION['nombre_vendedor']) {
     header("Location:index.php");
 }
+
 $session_id = session_id();
-$id = $_POST['id'];
-$cantidad = $_POST['cantidad'];
-$precio_venta = $_POST['precio_venta'];
+var_dump($_GET);
+if (isset($_GET["id"])) {
+    $id = $_GET['id'];
+    $cantidad = $_GET['cantidad'];
+    $precio_venta = $_POST['precio'];
+
+} else {
+    $id = $_POST['id'];
+    $cantidad = $_POST['cantidad'];
+    $precio_venta = $_POST['precio_venta'];
+}
+
 
 //echo $id . '<> ' . $cantidad . '<>' . $precio_venta . '<>' . $session_id . '<>';
 /* Connect To Database*/

@@ -47,30 +47,37 @@ $result = $cnx->query($sql);
 <body>
 <div class="text-center">
     <h1> Consultar
-        <small>Clientes</small>
+        <small>Cotizaciones</small>
     </h1>
 </div>
 <body>
 <!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
 <div class="col-lg-offset-3 inline-block quitar-float center-block espacio-arriba2">
-    <table id="example" class="display" cellspacing="0" width="100%">
+    <table id="example" class="display text-center" cellspacing="0" width="100%">
         <thead>
-        <tr>
-            <th>id_cotizacion</th>
-            <th>empresa</th>
-            <th>numero_cotizacion</th>
-            <th>fecha_cotizacion</th>
+        <tr class="text-center">
+            <th>Numero Cotizacion</th>
+            <th>Fecha De Cotizacion</th>
+            <th>Atencion</th>
+            <th>Empresa</th>
             <th>Ver</th>
         </tr>
         </thead>
         <tbody>
         <?php while ($row = $result->fetch_assoc()) { ?>
+            <?php
+            $id_cotizacion = $row['id_cotizacion'];
+            $numero_cotizacion = $row['numero_cotizacion'];
+            $fecha_cotizacion = $row['fecha_cotizacion'];
+            $atencion = $row['atencion'];
+            $empresa = $row['empresa'];
+            ?>
             <tr>
-                <td><?php echo $row['id_cotizacion']; ?></td>
-                <td><?php echo $row['numero_cotizacion']; ?></td>
-                <td><?php echo $row['atencion']; ?></td>
-                <td><?php echo $row['empresa']; ?></td>
-                <td><?php echo '<a href="request_db/consult_pdf.php?id=' . $row["id_cotizacion"] . '">Ver</a>'; ?></td>
+                <td><?php echo $numero_cotizacion; ?></td>
+                <td><?php echo $fecha_cotizacion; ?></td>
+                <td><?php echo $atencion; ?></td>
+                <td><?php echo $empresa ?></td>
+                <td><?php echo '<a href="request_db/consult_pdf.php?id=' . $id_cotizacion . '" target="_blank">Ver PDF</a>'; ?></td>
 
             </tr>
         <?php } ?>

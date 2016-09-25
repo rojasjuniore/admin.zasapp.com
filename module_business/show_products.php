@@ -62,7 +62,7 @@ $url = $base_url . "/module_business/show_products.php";
             echo '<h5>Numero de articulos: ' . $num_total_registros . '</h5>';
             //calculo el total de paginas
             $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
-            $consulta = "SELECT imagen, titulo, descripcion, plantilla_url 
+            $consulta = "SELECT id_producto, imagen, titulo, descripcion, precio,plantilla_url,precio 
                          FROM producto
                          ORDER BY id_producto  
                          DESC LIMIT " . $inicio . "," . $TAMANO_PAGINA;
@@ -76,7 +76,7 @@ $url = $base_url . "/module_business/show_products.php";
                 echo "<p>$columna[descripcion]</p>";
                 echo '<p>';
                 echo "<a href='$columna[plantilla_url]' target='_blank' class='btn btn-primary espacio-derecha1' role='button'>Demo</a>";
-                echo "<a href='#' class='btn btn-default' role='button'>Seleccionar</a>";
+                // echo "<button type='button' class='btn btn-default'><a href='../load_ajax/add_prod_cot.php?id=$columna[id_producto]&precio_venta=$columna[precio]&cantidad=1'>Agregar</button></a>";
                 echo '</p>';
                 echo '</div>';
                 echo "</div>";
