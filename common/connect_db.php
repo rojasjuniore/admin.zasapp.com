@@ -11,7 +11,6 @@ $port = PORT;
 
 //Desarrollo
 $link = mysql_connect($server, $user, $pass);
-
 if ($link) {
     mysql_select_db($DB, $link);
 }

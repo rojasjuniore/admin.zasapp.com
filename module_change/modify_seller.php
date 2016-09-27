@@ -101,9 +101,6 @@ $columnas = mysqli_fetch_assoc($filas);
                     </div>
                     <input type="hidden" name="id_vendedor_mod" value=<?php echo $id; ?>>
                     <div class="espacio-arriba1">
-                        <a href="#">
-                            <button type="button" class="btn btn-default espacio-derecha1">Atras</button>
-                        </a>
                         <input type="submit" name="enviar" value="Registrar" class="btn btn-default espacio-derecha1"/>
                         <input type="reset" value="Borrar" class="btn btn-default  espacio-derecha1"/>
                     </div>

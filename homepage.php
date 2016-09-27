@@ -70,8 +70,9 @@ $result = $cnx->query($sql);
                 <td><?php echo $row['fecha_cotizacion']; ?></td>
                 <td><?php echo $row['empresa']; ?></td>
                 <td><?php echo $row['validez']; ?></td>
-                <td><?php echo '<a href="#?id=' . $row["id_cotizacion"] . '">Ver PDF</a>'; ?></td>
+                <td><?php echo '<a href="common/reportes_pdf/cotizacion.php?id=' . $row["id_cotizacion"] . '" target="_blank">Ver PDF</a>'; ?></td>
                 <td><?php echo '<a href="#?id=' . $row["id_cotizacion"] . '">Editar</a>'; ?></td>
+
             </tr>
         <?php } ?>
         </tbody>

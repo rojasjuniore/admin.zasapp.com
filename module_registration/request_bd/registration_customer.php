@@ -8,6 +8,7 @@ require_once('../../common/config.php');
 $base_url = BASE_URL;
 if (isset($_POST['enviar'])) {
 
+    $empresa = $_POST["empresa"];
     $nombre_cliente = $_POST["nombre_cliente"];
     $apellidos_cliente = $_POST["apellidos_cliente"];
     $nic_cliente = $_POST["nic_cliente"];
@@ -19,9 +20,9 @@ if (isset($_POST['enviar'])) {
     $telefono_local_cliente = $_POST["telefono_local_cliente"];
 
     $reg = mysql_query("INSERT INTO cliente
-                        (nombre_cliente, apellidos_cliente, nic_cliente,email_cliente, clave_cliente, 
+                        (empresa,nombre_cliente, apellidos_cliente, nic_cliente,email_cliente, clave_cliente, 
                         direccion_cliente,pais_cliente,telefono_movil_cliente,telefono_local_cliente)    
-                        VALUES ('$nombre_cliente','$apellidos_cliente','$nic_cliente','$email_cliente',
+                        VALUES ('$empresa','$nombre_cliente','$apellidos_cliente','$nic_cliente','$email_cliente',
                         '$clave_cliente', '$direccion_cliente','$pais_cliente','$telefono_movil_cliente',
                         '$telefono_local_cliente')", $link)
     or die("Error al ejecutar la consulta" . mysql_error());

@@ -273,16 +273,16 @@ if (@!$_SESSION['nombre_vendedor']) {
         var atencion = $("#atencion").val();
         var tel1 = $("#tel1").val();
         var empresa = $("#empresa").val();
+        var direccion_cliente = $("#direccion_cliente").val();
         var tel2 = $("#tel2").val();
         var email = $("#email").val();
         var condiciones = $("#condiciones").val();
         var validez = $("#validez").val();
         var entrega = $("#entrega").val();
         var vendedor = $("#vendedor").val();
-
-        VentanaCentrada('../pdf/documentos/cotizacion_pdf.php?atencion=' + atencion + '&tel1=' + tel1 +
-            '&empresa=' + empresa + '&tel2=' + tel2 + '&email=' + email + '&condiciones=' + condiciones +
-            '&validez=' + validez + '&entrega=' + entrega + '&vendedor=' + vendedor, 'Cotizacion', '', '1024', '768',
+        VentanaCentrada('../common/reportes_pdf/cotizaciones_pdf.php?atencion=' + atencion + '&tel1=' + tel1 +
+            '&empresa=' + empresa + '&direccion_cliente=' + direccion_cliente + '&tel2=' + tel2 + '&email=' + email + '&condiciones=' + condiciones +
+            '&validez=' + validez + '&entrega=' + entrega + '&vendedor=' + vendedor, 'Cotizacion', '', '500', '500',
             'true');
 
     });

@@ -26,6 +26,10 @@
         <form action="request_bd/registration_customer.php" method="post">
             <div class="col-xs-5 inline-block quitar-float center-block">
 
+                <label for="nombre_cliente" class="espacio-arriba2">Empresa</label>
+                <input type="text" class="form-control" name="empresa" required=""
+                       id="empresa">
+
                 <label for="nombre_cliente" class="espacio-arriba2">Nombres</label>
                 <input type="text" class="form-control" name="nombre_cliente" required=""
                        id="nombre_cliente">
@@ -294,9 +298,7 @@
                 <input type="text" class="form-control" name="telefono_local_cliente" required="">
 
                 <div class="center-block espacio-arriba inline-block quitar-float">
-                    <a href="#">
-                        <button type="button" class="btn btn-default espacio-derecha1">Atras</button>
-                    </a>
+
                     <input type="submit" name="enviar" value="Registrar" class="btn btn-default espacio-derecha1"/>
                     <input type="reset" value="Borrar" class="btn btn-default  espacio-derecha1"/>
                 </div>

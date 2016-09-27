@@ -6,6 +6,7 @@ if (@!$_SESSION['nombre_vendedor']) {
 }
 include('../../common/connect_db.php');
 if (isset($_POST['enviar'])) {
+    $empresa = $_POST["empresa"];
     $id_cliente_mod = $_POST["id_cliente_mod"];
     $nombre_cliente = $_POST["nombre_cliente"];
     $apellidos_cliente = $_POST["apellidos_cliente"];
@@ -18,7 +19,7 @@ if (isset($_POST['enviar'])) {
 
 
     $consulta = "UPDATE cliente 
-              SET nombre_cliente='$nombre_cliente', 
+              SET empresa='empresa',nombre_cliente='$nombre_cliente', 
               apellidos_cliente='$apellidos_cliente', 
               nic_cliente='$nic_cliente', 
               email_cliente='$email_cliente', 

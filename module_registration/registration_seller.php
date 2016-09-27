@@ -76,9 +76,6 @@ if (@!$_SESSION['nombre_vendedor']) {
                 </article>
 
                 <div class="espacio-arriba1">
-                    <a href="principal.php">
-                        <button type="button" class="btn btn-default espacio-derecha1">Atras</button>
-                    </a>
                     <input type="submit" name="enviar" value="Registrar" class="btn btn-default espacio-derecha1"/>
                     <input type="reset" value="Borrar" class="btn btn-default  espacio-derecha1"/>
                 </div>

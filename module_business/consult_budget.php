@@ -77,7 +77,7 @@ $result = $cnx->query($sql);
                 <td><?php echo $fecha_cotizacion; ?></td>
                 <td><?php echo $atencion; ?></td>
                 <td><?php echo $empresa ?></td>
-                <td><?php echo '<a href="request_db/consult_pdf.php?id=' . $id_cotizacion . '" target="_blank">Ver PDF</a>'; ?></td>
+                <td><?php echo '<a href="../common/reportes_pdf/cotizacion.php?id=' . $id_cotizacion . '" target="_blank">Ver PDF</a>'; ?></td>
 
             </tr>
         <?php } ?>

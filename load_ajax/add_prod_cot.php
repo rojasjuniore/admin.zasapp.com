@@ -5,7 +5,6 @@ if (@!$_SESSION['nombre_vendedor']) {
 }
 
 $session_id = session_id();
-var_dump($_GET);
 if (isset($_GET["id"])) {
     $id = $_GET['id'];
     $cantidad = $_GET['cantidad'];
@@ -16,7 +15,6 @@ if (isset($_GET["id"])) {
     $cantidad = $_POST['cantidad'];
     $precio_venta = $_POST['precio_venta'];
 }
-
 
 //echo $id . '<> ' . $cantidad . '<>' . $precio_venta . '<>' . $session_id . '<>';
 /* Connect To Database*/

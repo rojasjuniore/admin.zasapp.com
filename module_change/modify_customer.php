@@ -44,6 +44,11 @@ $columnas = mysqli_fetch_assoc($filas);
             <div class="col-xs-5 inline-block quitar-float center-block">
                 <article>
 
+                    <label for="empresa" class="espacio-arriba2">Empresa</label>
+                    <input type="text" class="form-control" name="empresa"
+                           value=<?php echo $columnas["empresa"]; ?>
+                           required="">
+
                     <label for="nombre_cliente" class="espacio-arriba2">Nombre</label>
                     <input type="text" class="form-control" name="nombre_cliente"
                            value=<?php echo $columnas["nombre_cliente"]; ?>
@@ -112,9 +117,6 @@ $columnas = mysqli_fetch_assoc($filas);
 
                     <input type="hidden" name="id_cliente_mod" value=<?php echo $id; ?>>
                     <div class="espacio-arriba1">
-                        <a href="#">
-                            <button type="button" class="btn btn-default espacio-derecha1">Atras</button>
-                        </a>
                         <input type="submit" name="enviar" value="Registrar" class="btn btn-default espacio-derecha1"/>
                         <input type="reset" value="Borrar" class="btn btn-default  espacio-derecha1"/>
                     </div>

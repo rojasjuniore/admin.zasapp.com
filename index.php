@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login Form</title>
+    <title>Zasaap</title>
     <link rel="stylesheet" href="css/main_login.css">
 </head>
 
@@ -11,7 +11,7 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Zasaap</title>
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
 
