@@ -7,7 +7,6 @@ if (@!$_SESSION['nombre_vendedor']) {
 include('../common/_setup.php');
 
 $id = $_GET['id'];
-//echo "$id";
 $consulta = ("SELECT id_producto,codigo_producto, titulo, descripcion, precio, imagen, plantilla_url, estado, fecha_creacion
 FROM producto WHERE id_producto='$id' LIMIT 1");
 $filas = mysqli_query($cnx, $consulta) or die(mysql_error());
@@ -19,7 +18,6 @@ $columnas = mysqli_fetch_assoc($filas);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Librerias CSS-->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap-theme.min.css">

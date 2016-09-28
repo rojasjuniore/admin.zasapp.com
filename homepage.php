@@ -4,7 +4,7 @@ if (@!$_SESSION['nombre_vendedor']) {
     header("Location:index.php");
 }
 require('common/_setup.php');
-$sql = "SELECT * FROM cotizaciones ORDER BY fecha_cotizacion ASC";
+$sql = "SELECT * FROM cotizaciones";
 $result = $cnx->query($sql);
 
 ?>
@@ -20,7 +20,6 @@ $result = $cnx->query($sql);
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <script>
         $(document).ready(function () {
             $('#example').DataTable({
@@ -45,34 +44,34 @@ $result = $cnx->query($sql);
 <?php include('common/menu.php'); ?>
 <body>
 <div class="text-center">
-    <h1>Ultima Cotizaciones
-        <small>Generadas</small>
+    <h1 class="espacio-abajo">Ultimos
+        <small>Presupuestos</small>
     </h1>
 </div>
 <body>
-<!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
-<div class="">
+<div class="col-md-9 center-table">
     <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th>COD</th>
             <th>Fecha</th>
             <th>Empresa</th>
-            <th>validez</th>
-            <th>Ver</th>
-            <th>Editar</th>
+            <th>Atencion</th>
+            <th>Validez</th>
+            <th>Ver PDF</th>
+            <th>Edit</th>
         </tr>
         </thead>
         <tbody>
         <?php while ($row = $result->fetch_assoc()) { ?>
             <tr>
-                <td><?php echo $row['id_cotizacion']; ?></td>
+                <td><?php echo $row['numero_cotizacion']; ?></td>
                 <td><?php echo $row['fecha_cotizacion']; ?></td>
                 <td><?php echo $row['empresa']; ?></td>
+                <td><?php echo $row['atencion']; ?></td>
                 <td><?php echo $row['validez']; ?></td>
                 <td><?php echo '<a href="common/reportes_pdf/cotizacion.php?id=' . $row["id_cotizacion"] . '" target="_blank">Ver PDF</a>'; ?></td>
                 <td><?php echo '<a href="#?id=' . $row["id_cotizacion"] . '">Editar</a>'; ?></td>
-
             </tr>
         <?php } ?>
         </tbody>

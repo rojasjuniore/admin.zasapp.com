@@ -26,33 +26,27 @@
         <form action="request_bd/registration_customer.php" method="post">
             <div class="col-xs-5 inline-block quitar-float center-block">
 
-                <label for="nombre_cliente" class="espacio-arriba2">Empresa</label>
+                <label for="nombre_cliente" class="espacio-arriba2">Empresa.</label>
                 <input type="text" class="form-control" name="empresa" required=""
                        id="empresa">
 
-                <label for="nombre_cliente" class="espacio-arriba2">Nombres</label>
+                <label for="nombre_cliente" class="espacio-arriba2">Nombres.</label>
                 <input type="text" class="form-control" name="nombre_cliente" required=""
                        id="nombre_cliente">
 
-                <label for="apellidos_cliente" class="espacio-arriba2">Apellidos</label>
+                <label for="apellidos_cliente" class="espacio-arriba2">Apellidos.</label>
                 <input type="text" class="form-control" name="apellidos_cliente" required=""
                        id="apellidos_cliente">
 
-                <label for="nic_cliente" class="espacio-arriba2">NIC</label>
-                <input type="text" class="form-control" name="nic_cliente" required="" id="nic_cliente">
-
-                <label for="email_cliente" class="espacio-arriba2">Email</label>
+                <label for="email_cliente" class="espacio-arriba2">Email.</label>
                 <input type="email" class="form-control" name="email_cliente" required="" id="Email_cliente">
 
-                <label for="clave_cliente" class="espacio-arriba2">Clave</label>
-                <input type="password" class="form-control" name="clave_cliente" required="" id="clave_cliente">
-
-                <label for="dirección_fiscal" class="espacio-arriba2">Dirección Fiscal</label>
-                <textarea class="form-control" name="direccion_cliente" rows="3" required></textarea>
+                <label for="nic_cliente" class="espacio-arriba2">CIF/NIF.</label>
+                <input type="text" class="form-control" name="cif_nif" required="" id="nic_cliente">
                 <div class="">
                     <article>
                         <label for="dirección_fiscal" class="espacio-arriba2">Seleccione Pais</label>
-                        <select multiple class="form-control" name="pais_cliente">
+                        <select class="form-control" name="pais_cliente">
                             <option>Seleccione..</option>
                             <option value="AF">Afganistán</option>
                             <option value="AL">Albania</option>
@@ -291,10 +285,23 @@
                         </select>
                     </article>
                 </div>
-                <label for="telefono_movil_cliente" class="espacio-arriba2">Telefono Movil</label>
+
+                <label for="estado" class="espacio-arriba2">Ciudad.</label>
+                <input type="text" class="form-control" name="ciudad_cliente" required="">
+
+                <label for="estado" class="espacio-arriba2">Provicia.</label>
+                <input type="text" class="form-control" name="provicia_cliente" required="">
+
+                <label for="estado" class="espacio-arriba2">Código Postal.</label>
+                <input type="text" class="form-control" name="codigo_postal" required="">
+
+                <label for="dirección_fiscal" class="espacio-arriba2">Dirección Fiscal.</label>
+                <textarea class="form-control" name="direccion_cliente" rows="3" required></textarea>
+
+                <label for="telefono_movil_cliente" class="espacio-arriba2">Telefono Movil.</label>
                 <input type="text" class="form-control" name="telefono_movil_cliente" required="">
 
-                <label for="telefono_local_cliente " class="espacio-arriba2">Telefono Local</label>
+                <label for="telefono_local_cliente " class="espacio-arriba2">Telefono Local.</label>
                 <input type="text" class="form-control" name="telefono_local_cliente" required="">
 
                 <div class="center-block espacio-arriba inline-block quitar-float">

@@ -41,7 +41,7 @@ $result = $cnx->query($sql);
 
         });
     </script>
-    <title>Consultar Cotizaciones</title>
+    <title>Consultar Presupuestos</title>
 </head>
 <?php include('../common/menu.php'); ?>
 <body>

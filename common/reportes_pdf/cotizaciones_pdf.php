@@ -131,6 +131,6 @@ $mpdf->Output('cotizaciones.pdf', 'I');
 
 $date = date("Y-m-d H:i:s");
 $insert = mysql_query("INSERT INTO cotizaciones (numero_cotizacion,fecha_cotizacion,atencion, tel1,empresa,tel2,email,condiciones,validez,entrega,vendedor,estatus) VALUES ('$numero_cotizacion','$date','$atencion','$tel1','$empresa', '$tel2','$email','$condiciones','$validez','$entrega','$vendedor','PEND')") or die(mysql_error());
-
+$delete = mysql_query("DELETE FROM tmp_cotizacion WHERE session_id='" . $session_id . "'") or die("Error al ejecutar la consulta 05" . mysql_error());
 
 ?>

@@ -51,8 +51,7 @@ $result = $cnx->query($sql);
         <small>productos</small>
     </h1>
 </div>
-<!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
-<div class="">
+<div class="col-md-9 center-table">
     <h3><a href="registro_producto.php">Cargar Producto</a></h3>
     <table id="example" class="display" cellspacing="0" width="100%">
         <thead>

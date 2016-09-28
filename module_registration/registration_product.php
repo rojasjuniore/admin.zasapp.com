@@ -46,11 +46,11 @@ if (@!$_SESSION['nombre_vendedor']) {
                 <label for="ejemplo_archivo_1" class="espacio-arriba2">Adjuntar un archivo</label>
                 <input id="imagen" name="imagen" size="30" type="file"/>
 
-                <label for="plantilla_url" class="espacio-arriba2">Platilla</label>
+                <label for="plantilla_url" class="espacio-arriba2">URL</label>
                 <input type="text" class="form-control" name="plantilla_url" required="" id="plantilla_url">
 
                 <label for="estado" class="espacio-arriba2">Estado</label>
-                <select multiple class="form-control" name="estado[]">
+                <select class="form-control" name="estado[]">
                     <option>Seleccione..</option>
                     <option value="0">Visible</option>
                     <option value="1">Oculto</option>

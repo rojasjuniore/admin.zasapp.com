@@ -51,14 +51,12 @@ $result = $cnx->query($sql);
     </h1>
 </div>
 <body>
-<!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
-<div class="col-lg-offset-3 inline-block quitar-float center-block espacio-arriba2">
+<div class="col-md-8 center-table">
     <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>NIC</th>
+            <th>Nombres</th>
+            <th>CIF/NIF</th>
             <th>email</th>
             <th>telefono</th>
             <th>Editar</th>
@@ -68,9 +66,8 @@ $result = $cnx->query($sql);
         <tbody>
         <?php while ($row = $result->fetch_assoc()) { ?>
             <tr>
-                <td><?php echo $row['nombre_cliente']; ?></td>
-                <td><?php echo $row['apellidos_cliente']; ?></td>
-                <td><?php echo $row['nic_cliente']; ?></td>
+                <td><?php echo $row['nombre_cliente'] . ' ' . $row['apellidos_cliente']; ?></td>
+                <td><?php echo $row['cif_nif']; ?></td>
                 <td><?php echo $row['email_cliente']; ?></td>
                 <td><?php echo $row['telefono_movil_cliente']; ?></td>
                 <td><?php echo '<a href="../module_change/modify_customer.php?id=' . $row["id_cliente"] . '">Editar</a>'; ?></td>

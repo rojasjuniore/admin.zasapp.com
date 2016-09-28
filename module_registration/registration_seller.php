@@ -30,28 +30,28 @@ if (@!$_SESSION['nombre_vendedor']) {
         <form action="request_bd/registration_seller.php" method="post">
             <div class="col-xs-5 inline-block quitar-float center-block">
                 <article>
-                    <label for="nombres_vendedor" class="espacio-arriba2">Nombres</label>
+                    <label for="nombres_vendedor" class="espacio-arriba2">Nombres.</label>
                     <input type="text" class="form-control" name="nombre_vendedor" required=""
                            id="nombres_vendedor">
 
-                    <label for="Apelidos_vendedor" class="espacio-arriba2">Apellidos</label>
+                    <label for="Apelidos_vendedor" class="espacio-arriba2">Apellidos.</label>
                     <input type="text" class="form-control" name="apellidos_vendedor" required=""
                            id="Apelidos_vendedor">
 
-                    <label for="email_vendedor" class="espacio-arriba2">Email</label>
+                    <label for="email_vendedor" class="espacio-arriba2">Email.</label>
                     <input type="email" class="form-control" name="email_vendedor" required=""
                            id="Email_vendedor">
 
-                    <label for="email_vendedor" class="espacio-arriba2">Usuario</label>
+                    <label for="email_vendedor" class="espacio-arriba2">Usuario.</label>
                     <input type="text" class="form-control" name="usuario_vendedor" required=""
                            id="Email_vendedor">
 
-                    <label for="descripción" class="espacio-arriba2">Clave</label>
+                    <label for="descripción" class="espacio-arriba2">Clave.</label>
                     <input type="password" class="form-control" name="clave_vendedor" required=""
                            id="Email_vendedor">
                     <div>
-                        <label for="estado" class="espacio-arriba2">Comision</label>
-                        <select multiple class="form-control" name="comision_vendedor">
+                        <label for="estado" class="espacio-arriba2">Comision.</label>
+                        <select class="form-control" name="comision_vendedor">
                             <option>Seleccione..</option>
                             <option value="10">10%</option>
                             <option value="20">20%</option>
@@ -66,11 +66,11 @@ if (@!$_SESSION['nombre_vendedor']) {
                         </select>
                     </div>
                     <div>
-                        <label for="estado" class="espacio-arriba2">Permiso</label>
-                        <select multiple class="form-control" name="permisos">
+                        <label for="estado" class="espacio-arriba2">Permiso.</label>
+                        <select class="form-control" name="permisos">
                             <option>Seleccione..</option>
-                            <option value="admin">Administrador</option>
-                            <option value="basico">Basico</option>
+                            <option value="admin">Administrador.</option>
+                            <option value="basico">Basico.</option>
                         </select>
                     </div>
                 </article>

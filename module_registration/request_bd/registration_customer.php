@@ -11,20 +11,17 @@ if (isset($_POST['enviar'])) {
     $empresa = $_POST["empresa"];
     $nombre_cliente = $_POST["nombre_cliente"];
     $apellidos_cliente = $_POST["apellidos_cliente"];
-    $nic_cliente = $_POST["nic_cliente"];
     $email_cliente = $_POST["email_cliente"];
-    $clave_cliente = $_POST["clave_cliente"];
-    $direccion_cliente = $_POST["direccion_cliente"];
+    $cif_nif = $_POST["cif_nif"];
     $pais_cliente = $_POST["pais_cliente"];
+    $ciudad_cliente = $_POST["ciudad_cliente"];
+    $provicia_cliente = $_POST["provicia_cliente"];
+    $codigo_postal = $_POST["codigo_postal"];
+    $direccion_cliente = $_POST["direccion_cliente"];
     $telefono_movil_cliente = $_POST["telefono_movil_cliente"];
     $telefono_local_cliente = $_POST["telefono_local_cliente"];
 
-    $reg = mysql_query("INSERT INTO cliente
-                        (empresa,nombre_cliente, apellidos_cliente, nic_cliente,email_cliente, clave_cliente, 
-                        direccion_cliente,pais_cliente,telefono_movil_cliente,telefono_local_cliente)    
-                        VALUES ('$empresa','$nombre_cliente','$apellidos_cliente','$nic_cliente','$email_cliente',
-                        '$clave_cliente', '$direccion_cliente','$pais_cliente','$telefono_movil_cliente',
-                        '$telefono_local_cliente')", $link)
+    $reg = mysql_query("INSERT INTO cliente (empresa, nombre_cliente,apellidos_cliente,email_cliente,cif_nif,pais_cliente,ciudad_cliente,provicia_cliente,codigo_postal,direccion_cliente,telefono_movil_cliente,telefono_local_cliente) VALUES ('$empresa','$nombre_cliente','$apellidos_cliente', '$email_cliente','$cif_nif','$pais_cliente','$ciudad_cliente','$provicia_cliente','$codigo_postal','$direccion_cliente','$telefono_movil_cliente','$telefono_local_cliente')", $link)
     or die("Error al ejecutar la consulta" . mysql_error());
     if ($reg) {
         echo '<script>alert("Registro guardado con exito")</script>';

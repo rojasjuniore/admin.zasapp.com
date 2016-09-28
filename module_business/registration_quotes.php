@@ -9,7 +9,7 @@ if (@!$_SESSION['nombre_vendedor']) {
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Registro de cotizaciones</title>
+    <title>Registro de Presupuesto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="nofollow">
     <link href="../css/assets/css/bootstrap.css" rel="stylesheet">
     <link href="../css/assets/css/bootstrap-responsive.css" rel="stylesheet">

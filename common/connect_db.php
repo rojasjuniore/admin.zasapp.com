@@ -6,7 +6,7 @@ $pass = DB_PASSWORD;
 $DB = DB_DATABASE;
 $port = PORT;
 
-//Produccion
+//Produccion//
 //$link = mysql_connect($server, $user, $pass, $port);
 
 //Desarrollo
