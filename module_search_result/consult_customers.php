@@ -51,27 +51,30 @@ $result = $cnx->query($sql);
     </h1>
 </div>
 <body>
-<div class="col-md-8 center-table">
-    <table id="example" class="display" cellspacing="0" width="100%">
+
+<div class="container">
+    <table id="example" class="display center-table" cellspacing="0" width="100%">
         <thead>
         <tr>
+            <th>Empresa</th>
             <th>Nombres</th>
             <th>CIF/NIF</th>
-            <th>email</th>
             <th>telefono</th>
             <th>Editar</th>
-            <th>Seleccionar</th>
+            <th>Eligir</th>
         </tr>
         </thead>
         <tbody>
         <?php while ($row = $result->fetch_assoc()) { ?>
             <tr>
+                <td><?php echo $row['empresa']; ?></td>
                 <td><?php echo $row['nombre_cliente'] . ' ' . $row['apellidos_cliente']; ?></td>
                 <td><?php echo $row['cif_nif']; ?></td>
-                <td><?php echo $row['email_cliente']; ?></td>
                 <td><?php echo $row['telefono_movil_cliente']; ?></td>
-                <td><?php echo '<a href="../module_change/modify_customer.php?id=' . $row["id_cliente"] . '">Editar</a>'; ?></td>
-                <td><?php echo '<a href="../module_business/registration_quotes1.php?id=' . $row["id_cliente"] . '">Seleccionar</a>'; ?></td>
+                <td><?php echo '<a href="../module_change/modify_customer.php?id=' .
+                        $row["id_cliente"] . '"><img src="../img/editar.png"></a>'; ?></td>
+                <td><?php echo '<a href="../module_business/registration_quotes1.php?id=' .
+                        $row["id_cliente"] . '"><img src="../img/sel.png"></a>'; ?></td>
             </tr>
         <?php } ?>
         </tbody>

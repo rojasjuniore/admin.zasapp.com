@@ -6,34 +6,27 @@
     <link rel="stylesheet" href="css/main_login.css">
 </head>
 
-<body background="img/pic02.jpg">
+<body>
 
 <html lang="en-US">
-<head>
-    <meta charset="utf-8">
-    <title>Zasaap</title>
-
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
-
-</head>
-
 <div id="login">
-    <div class="text-center">
+    <div class="container">
         <h1>SISTEMA
             <small>Zasaap</small>
         </h1>
     </div>
     <form action="common/login.php" method="post">
         <span class="fontawesome-user"></span>
-        <input type="text" placeholder="Username" id="correo_usuarios"
-               name="mail">
-
+        <input type="text"
+               placeholder="Username"
+               id="correo_usuarios"
+               name="mail"
+               required>
         <span class="fontawesome-lock"></span>
-        <input type="password" id="clave_usuarios" name="pass" placeholder="Password">
-
+        <input type="password"
+               id="clave_usuarios"
+               name="pass" placeholder="Password" required>
         <input type="submit" value="Login">
     </form>
-
-
 </body>
 </html>

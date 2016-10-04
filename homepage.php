@@ -49,8 +49,8 @@ $result = $cnx->query($sql);
     </h1>
 </div>
 <body>
-<div class="col-md-9 center-table">
-    <table id="example" class="display" cellspacing="0" width="100%">
+<div class="container ">
+    <table id="example" class="display center-table" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th>COD</th>
@@ -58,7 +58,8 @@ $result = $cnx->query($sql);
             <th>Empresa</th>
             <th>Atencion</th>
             <th>Validez</th>
-            <th>Ver PDF</th>
+            <th>Ver pdf</th>
+            <th>Estatus</th>
             <th>Edit</th>
         </tr>
         </thead>
@@ -70,14 +71,37 @@ $result = $cnx->query($sql);
                 <td><?php echo $row['empresa']; ?></td>
                 <td><?php echo $row['atencion']; ?></td>
                 <td><?php echo $row['validez']; ?></td>
-                <td><?php echo '<a href="common/reportes_pdf/cotizacion.php?id=' . $row["id_cotizacion"] . '" target="_blank">Ver PDF</a>'; ?></td>
-                <td><?php echo '<a href="#?id=' . $row["id_cotizacion"] . '">Editar</a>'; ?></td>
+                <td><?php echo '<select class="form-control" name="comision_vendedor" required>
+                                        <option>Estatus</option>
+                                        <option value="libre">Libre</option>
+                                        <option value="bloqueado">Bloqueado</option>
+                                        <option value="activo">Activo</option>
+                                        <option value="cerrado">Cerrado</option>
+                                        <option value="cancelado">Cancelado</option>
+                                    </select>';
+                    ?></td>
+                <td><?php echo '<a href="pdf_upload/' . $row["cotizacion_pdf"] . '.pdf" target="_blank">
+                <img src="img/contrato.png"></a>'; ?></td>
+                <td><?php echo '<a href="#?id=' . $row["id_cotizacion"] . '"> <img src="img/contrato.png"></a>'; ?></td>
             </tr>
         <?php } ?>
         </tbody>
+        delete.png
     </table>
 </div>
 </body>
 </html>
 
-
+<select class="form-control" name="comision_vendedor" required>
+    <option>Seleccione..</option>
+    <option value="10">10%</option>
+    <option value="20">20%</option>
+    <option value="30">30%</option>
+    <option value="30">40%</option>
+    <option value="40">50%</option>
+    <option value="50">60%</option>
+    <option value="70">70%</option>
+    <option value="80">80%</option>
+    <option value="90">90%</option>
+    <option value="100">100%</option>
+</select>

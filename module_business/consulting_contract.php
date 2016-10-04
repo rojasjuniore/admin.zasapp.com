@@ -51,8 +51,7 @@ $result = $cnx->query($sql);
     </h1>
 </div>
 <body>
-<!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
-<div class="col-lg-offset-3 inline-block quitar-float center-block espacio-arriba2">
+<div class="container">
     <table id="example" class="display text-center" cellspacing="0" width="100%">
         <thead>
         <tr class="text-center">
@@ -83,7 +82,9 @@ $result = $cnx->query($sql);
         <?php } ?>
         </tbody>
     </table>
+
 </div>
+
 </body>
 </html>
 

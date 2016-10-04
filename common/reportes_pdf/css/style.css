@@ -134,3 +134,8 @@ footer {
     padding: 8px 0;
     text-align: center;
 }
+
+.celda {
+    height: auto;
+    width: 200px;
+}

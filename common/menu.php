@@ -58,11 +58,11 @@ $base_url = BASE_URL;
                 <a href="#"><span class="icon-cart"></span>Presupuesto<span class="caret icon-arrow-down6"></span></a>
                 <ul class="children">
                     <li><a href="<?php echo $base_url; ?>/module_business/registration_quotes.php">Crear
-                            Presupuesto<span
+                            Presupuestos<span
                                 class="icon-cart"></span></a>
                     </li>
                     <li><a href="<?php echo $base_url; ?>/module_business/consult_budget.php">Consultar
-                            Presupuestos<span
+                            Presupuesto<span
                                 class="icon-search"></span></a>
                     <li><a href="<?php echo $base_url; ?>/module_business/consulting_contract.php">Consultar
                             Contratos<span

@@ -9,7 +9,7 @@ if (@!$_SESSION['nombre_vendedor']) {
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Registro de Presupuesto</title>
+    <title>Presupuestos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="nofollow">
     <link href="../css/assets/css/bootstrap.css" rel="stylesheet">
     <link href="../css/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -23,8 +23,8 @@ if (@!$_SESSION['nombre_vendedor']) {
 <div class="text-center">
     <legend>
         <h1>
-            Registro
-            <small>de cotizaciones</small>
+            Crear
+            <small>Presupuesto</small>
         </h1>
     </legend>
 </div>
@@ -66,10 +66,9 @@ if (@!$_SESSION['nombre_vendedor']) {
                                         <label class="control-label">Empresa</label>
                                         <div class="controls">
                                             <input type="text"
-
                                                    class="input"
-                                                   placeholder="compannia"
-                                                   id="$compannia">
+                                                   placeholder="empresa"
+                                                   id="$empresa">
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -282,7 +281,7 @@ if (@!$_SESSION['nombre_vendedor']) {
         var vendedor = $("#vendedor").val();
         VentanaCentrada('../common/reportes_pdf/cotizaciones_pdf.php?atencion=' + atencion + '&tel1=' + tel1 +
             '&empresa=' + empresa + '&direccion_cliente=' + direccion_cliente + '&tel2=' + tel2 + '&email=' + email + '&condiciones=' + condiciones +
-            '&validez=' + validez + '&entrega=' + entrega + '&vendedor=' + vendedor, 'Cotizacion', '', '500', '500',
+            '&validez=' + validez + '&entrega=' + entrega + '&vendedor=' + vendedor + '&id_cliente=' + id_cliente + '&empresa=' + id_cliente, 'Cotizacion', '', '700', '700',
             'true');
 
     });

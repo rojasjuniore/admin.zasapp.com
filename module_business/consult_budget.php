@@ -51,8 +51,8 @@ $result = $cnx->query($sql);
     </h1>
 </div>
 <body>
-<!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
-<div class="col-lg-offset-3 inline-block quitar-float center-block espacio-arriba2">
+<div class="container">
+
     <table id="example" class="display text-center" cellspacing="0" width="100%">
         <thead>
         <tr class="text-center">
@@ -60,6 +60,7 @@ $result = $cnx->query($sql);
             <th>Fecha De Cotizacion</th>
             <th>Atencion</th>
             <th>Empresa</th>
+            <th>Email</th>
             <th>Ver</th>
         </tr>
         </thead>
@@ -71,19 +72,26 @@ $result = $cnx->query($sql);
             $fecha_cotizacion = $row['fecha_cotizacion'];
             $atencion = $row['atencion'];
             $empresa = $row['empresa'];
+            $email = $row['email'];
             ?>
+
             <tr>
                 <td><?php echo $numero_cotizacion; ?></td>
                 <td><?php echo $fecha_cotizacion; ?></td>
                 <td><?php echo $atencion; ?></td>
                 <td><?php echo $empresa ?></td>
-                <td><?php echo '<a href="../common/reportes_pdf/cotizacion.php?id=' . $id_cotizacion . '" target="_blank">Ver PDF</a>'; ?></td>
+                <td><?php echo $email ?></td>
+                <td><?php echo '<a href="../pdf_upload/' . $row["cotizacion_pdf"] . '.pdf" target="_blank"><img src="img/contrato.png"></a>'; ?></td>
 
             </tr>
         <?php } ?>
+        <?php
+
+        ?>
         </tbody>
     </table>
 </div>
+
 </body>
 </html>
 

@@ -36,60 +36,59 @@ $columnas = mysqli_fetch_assoc($filas);
         <small>producto</small>
     </h1>
 </div>
-<section>
-    <div class="">
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+
         <form action="request_bd/edit_product.php" method="post" enctype="multipart/form-data">
-            <div class="col-xs-5 inline-block quitar-float center-block">
-                <article>
+            <article>
+                <label for="codigo_producto" class="espacio-arriba2">Codigo de Producto</label>
+                <input type="text" class="form-control" name="codigo_producto"
+                       value='<?php echo $columnas["codigo_producto"]; ?>' disabled required=""
+                       id="codigo_producto">
 
-                    <label for="codigo_producto" class="espacio-arriba2">Codigo de Producto</label>
-                    <input type="text" class="form-control" name="codigo_producto"
-                           value='<?php echo $columnas["codigo_producto"]; ?>' disabled required=""
-                           id="codigo_producto">
+                <label for="titulo" class="espacio-arriba2">Titulo</label>
+                <input type="titulo" class="form-control"
+                       name="titulo" value='<?php echo $columnas["titulo"]; ?>' required="" id="titulo">
 
-                    <label for="titulo" class="espacio-arriba2">Titulo</label>
-                    <input type="titulo" class="form-control"
-                           name="titulo" value='<?php echo $columnas["titulo"]; ?>' required="" id="titulo">
-
-                    <label for="descripcion" class="espacio-arriba2">Descripción</label>
-                    <textarea class="form-control" name="descripcion" rows="3" required>
+                <label for="descripcion" class="espacio-arriba2">Descripción</label>
+                <textarea class="form-control" name="descripcion" rows="3" required>
         <?php echo $columnas["descripcion"]; ?></textarea>
 
-                    <label for="precio" class="espacio-arriba2">Precio</label>
-                    <input type="precio" class="form-control" name="precio"
-                           value=<?php echo $columnas["precio"]; ?>
-                           required="" id="precio"
-                           placeholder="Ej: #">
+                <label for="precio" class="espacio-arriba2">Precio</label>
+                <input type="precio" class="form-control" name="precio"
+                       value=<?php echo $columnas["precio"]; ?>
+                       required="" id="precio"
+                       placeholder="Ej: #">
 
-                    <label for="ejemplo_archivo_1" class="espacio-arriba2">Adjuntar un archivo</label>
-                    <input id="imagen" name="imagen"
-                           value=<?php echo $columnas["imagen"]; ?>
-                           size="30" type="file"/>
+                <label for="ejemplo_archivo_1" class="espacio-arriba2">Adjuntar un archivo</label>
+                <input id="imagen" name="imagen"
+                       value=<?php echo $columnas["imagen"]; ?>
+                       size="30" type="file"/>
 
-                    <label for="plantilla_url" class="espacio-arriba2">Platilla</label>
-                    <input type="plantilla_url" class="form-control" name="plantilla_url"
-                           value=<?php echo $columnas["plantilla_url"]; ?>
-                           required="" id="plantilla_url"
-                           placeholder="Ej: #">
+                <label for="plantilla_url" class="espacio-arriba2">Platilla</label>
+                <input type="plantilla_url" class="form-control" name="plantilla_url"
+                       value=<?php echo $columnas["plantilla_url"]; ?>
+                       required="" id="plantilla_url"
+                       placeholder="Ej: #">
+                <article>
+                    <h3>Estado</h3>
+                    <select multiple class="form-control" name="estado">
+                        <option>Seleccione..</option>
+                        <option value="true">Visible</option>
+                        <option value="false">Oculto</option>
+                </article>
 
-                    <div class="">
-                        <article>
-                            <h3>Estado</h3>
-                            <select multiple class="form-control" name="estado">
-                                <option>Seleccione..</option>
-                                <option value="true">Visible</option>
-                                <option value="false">Oculto</option>
-                        </article>
+                <input type="hidden" name="id_producto_mod" value=<?php echo $id; ?>>
+                <div class="espacio-arriba1">
 
-                        <input type="hidden" name="id_producto_mod" value=<?php echo $id; ?>>
-                        <div class="espacio-arriba1">
+                    <input type="submit" name="enviar" value="Registrar"
+                           class="btn btn-default espacio-derecha1"/>
+                    <input type="reset" value="Borrar" class="btn btn-default  espacio-derecha1"/>
+                </div>
 
-                            <input type="submit" name="enviar" value="Registrar"
-                                   class="btn btn-default espacio-derecha1"/>
-                            <input type="reset" value="Borrar" class="btn btn-default  espacio-derecha1"/>
-                        </div>
-                    </div>
         </form>
+    </div>
+</div>
 </body>
 </html>
 

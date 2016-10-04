@@ -49,8 +49,7 @@ $result = $mysqli->query($sql);
         <small>vendedores</small>
     </h1>
 </div>
-<!--col-xs-7 inline-block quitar-float center-block espacio-arriba2-->
-<div class="">
+<div class="container">
     <form action="registro/#" method="post">
         <table id="example" class="display" cellspacing="0" width="100%">
             <thead>
@@ -74,8 +73,9 @@ $result = $mysqli->query($sql);
                     <td><?php echo $row['usuario_vendedor']; ?></td>
                     <td><?php echo $row['clave_vendedor']; ?></td>
                     <td><?php echo $row['comision_vendedor']; ?></td>
-                    <td><?php echo '<a href="../module_change/modify_seller.php?id=' . $row["id_vendedor"] . '">Editar</a>'; ?></td>
-                    <td><?php echo '<a href="#?id=' . $row["id_vendedor"] . '">Ventas</a>'; ?></td>
+                    <td><?php echo '<a href="../module_change/modify_seller.php?id=' .
+                            $row["id_vendedor"] . '"><img src="../img/editar.png"></a>'; ?></td>
+                    <td><?php echo '<a href="#?id=' . $row["id_vendedor"] . '"><img src="../img/sel.png"></a>'; ?></td>
                 </tr>
             <?php } ?>
             </tbody>

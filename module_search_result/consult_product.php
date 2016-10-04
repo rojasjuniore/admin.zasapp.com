@@ -51,16 +51,16 @@ $result = $cnx->query($sql);
         <small>productos</small>
     </h1>
 </div>
-<div class="col-md-9 center-table">
-    <h3><a href="registro_producto.php">Cargar Producto</a></h3>
-    <table id="example" class="display" cellspacing="0" width="100%">
+<div class="container">
+    <h3><a href="../module_registration/registration_product.php">Cargar Producto</a></h3>
+    <table id="example" class="display center-table" cellspacing="0" width="100%">
         <thead>
         <tr>
             <th>Codigo</th>
             <th>titulo</th>
             <th>descripcion</th>
             <th>precio</th>
-            <th>plantilla_url</th>
+            <th>Ver</th>
             <th>Editar</th>
             <th>Generar</th>
         </tr>
@@ -72,9 +72,9 @@ $result = $cnx->query($sql);
                 <td><?php echo $row['titulo']; ?></td>
                 <td><?php echo substr($row['descripcion'], 10); ?></td>
                 <td><?php echo $row['precio']; ?></td>
-                <td><?php echo '<a href="' . $row["plantilla_url"] . '" target="_blank">Ir a Plantilla</a>'; ?></td>
-                <td><?php echo '<a href="../module_change/modify_product.php?id=' . $row["id_producto"] . '">Editar</a>'; ?></td>
-                <td><?php echo '<a href="#?id=' . $row["id_producto"] . '">Ventas</a>'; ?></td>
+                <td><?php echo '<a href="' . $row["plantilla_url"] . '" target="_blank"><img src="../img/ver.png"></a>'; ?></td>
+                <td><?php echo '<a href="../module_change/modify_product.php?id=' . $row["id_producto"] . '"><img src="../img/editar.png"></a>'; ?></td>
+                <td><?php echo '<a href="#?id=' . $row["id_producto"] . '"><img src="../img/contrato.png"></a>'; ?></td>
             </tr>
         <?php } ?>
         </tbody>

@@ -5,6 +5,7 @@ if (@!$_SESSION['nombre_vendedor']) {
 }
 $user = $_SESSION['nombre_vendedor'];
 $apellido = $_SESSION['apellidos_vendedor'];
+
 if (empty($id_cliente)) {
     require("../common/connect_db.php");
     $id_cliente = $_GET['id'];
@@ -12,39 +13,28 @@ if (empty($id_cliente)) {
     $result = mysql_query($query);
     while ($row = mysql_fetch_array($result)) {
         $id_cliente = $row["id_cliente"];
-        $compannia = $row['compannia'];
+        $empresa = $row['empresa'];
         $nombre_cliente = $row['nombre_cliente'];
         $apellidos_cliente = $row['apellidos_cliente'];
         $nic_cliente = $row['nic_cliente'];
-        $email_cliente = $row['email_cliente'];
+        $email = $row['email_cliente'];
         $clave_cliente = $row['clave_cliente'];
         $direccion_cliente = $row['direccion_cliente'];
         $pais_cliente = $row['pais_cliente'];
         $telefono_movil_cliente = $row['telefono_movil_cliente'];
         $telefono_local_cliente = $row['telefono_local_cliente'];
         $fecha_registro_cliente = $row['fecha_registro_cliente'];
+        //print_r($row);
+        //die();
     }
 
-} else {
-    $id_cliente = "";
-    $compannia = "";
-    $nombre_cliente = "";
-    $apellidos_cliente = "";
-    $nic_cliente = "";
-    $email_cliente = "";
-    $clave_cliente = "";
-    $direccion_cliente = "";
-    $pais_cliente = "";
-    $telefono_movil_cliente = "";
-    $telefono_local_cliente = "";
-    $fecha_registro_cliente = "";
 }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Registro de Presupuesto</title>
+    <title>Presupuestos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="nofollow">
     <link href="../css/assets/css/bootstrap.css" rel="stylesheet">
     <link href="../css/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -58,8 +48,8 @@ if (empty($id_cliente)) {
 <div class="text-center">
     <legend>
         <h1>
-            Registro
-            <small>de cotizaciones</small>
+            Crear
+            <small>Presupuestos</small>
         </h1>
     </legend>
 </div>
@@ -78,12 +68,16 @@ if (empty($id_cliente)) {
                                     <div class="control-group">
                                         <label class="control-label">Vendedor</label>
                                         <div class="controls">
-                                            <input type="text" class="input" pattern="\w+ \w+.*"
+                                            <input type="text" class="input"
                                                    value='<?php echo $user . '-' . $apellido; ?>'
                                                    disabled
                                                    id="user">
                                             <input type="hidden" name="vendedor" id="vendedor"
                                                    value='<?php echo $_SESSION['id_vendedor']; ?>'>
+                                            <input type="hidden" name="id_cliente" id="id_cliente"
+                                                   value='<?php echo $id_cliente; ?>'>
+                                            <input type="hidden" name="email" id="email"
+                                                   value='<?php echo $email; ?>'>
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -100,10 +94,10 @@ if (empty($id_cliente)) {
                                         <label class="control-label">Empresa</label>
                                         <div class="controls">
                                             <input type="text"
-                                                   value='<?php echo $compannia; ?>'
+                                                   value='<?php echo $empresa ?>'
                                                    class="input"
-                                                   placeholder="compannia"
-                                                   id="$compannia">
+                                                   placeholder="Empresa"
+                                                   id="empresa">
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -112,7 +106,7 @@ if (empty($id_cliente)) {
                                             <input type="text"
                                                    value='<?php echo $nombre_cliente . ' ' . $apellidos_cliente ?>'
                                                    class="input"
-                                                   pattern="\w+ \w+.*"
+                                                   placeholder="Personal de contacto"
                                                    title="Ingresa el nombre y apellidos"
                                                    required placeholder="Atención"
                                                    id="atencion">
@@ -135,7 +129,8 @@ if (empty($id_cliente)) {
                                     <div class="control-group">
                                         <label class="control-label">Direccion</label>
                                         <div class="controls">
-                                            <textarea class="form-control" name="direccion_cliente" rows="3" required>
+                                            <textarea class="form-control" name="direccion_cliente"
+                                                      id="direccion_cliente" rows="3" required>
                                                     <?php echo trim($direccion_cliente); ?>
                                                     </textarea>
                                         </div>
@@ -162,10 +157,20 @@ if (empty($id_cliente)) {
 
                                             <input type="text" class="input-medium"
                                                    placeholder="Tiempo de entrega"
-                                                   pattern="\w+.*"
                                                    title="Ingresa el tiempo de entrega"
                                                    required
                                                    id="entrega">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Descuento</label>
+                                        <div class="controls">
+                                            <input type="text" class="input-small"
+                                                   value=''
+                                                   title="Descuento"
+                                                   placeholder="Descuento"
+                                                   maxlength="12"
+                                                   id="descuento">
                                         </div>
                                     </div>
                         </div>
@@ -175,10 +180,6 @@ if (empty($id_cliente)) {
                             <button class="btn btn-default"><i class="icon-print"></i>
                                 Enviar
                             </button>
-                            <!-- <button>
-                                 <a href="request_db/quotation_pdf.php" target="_blank"
-                                    class="btn btn-default">Enviar</a>
-                             </button>-->
                         </div>
                         </fieldset>
                         </form>
@@ -257,6 +258,7 @@ if (empty($id_cliente)) {
 
 
 <script>
+
     function agregar(id) {
         var precio_venta = document.getElementById('precio_venta_' + id).value;
         var cantidad = document.getElementById('cantidad_' + id).value;
@@ -308,16 +310,17 @@ if (empty($id_cliente)) {
         var empresa = $("#empresa").val();
         var direccion_cliente = $("#direccion_cliente").val();
         var tel2 = $("#tel2").val();
+        var descuento = $("#descuento").val();
         var email = $("#email").val();
         var condiciones = $("#condiciones").val();
         var validez = $("#validez").val();
         var entrega = $("#entrega").val();
         var vendedor = $("#vendedor").val();
         VentanaCentrada('../common/reportes_pdf/cotizaciones_pdf.php?atencion=' + atencion + '&tel1=' + tel1 +
-            '&empresa=' + empresa + '&direccion_cliente=' + direccion_cliente + '&tel2=' + tel2 + '&email=' + email + '&condiciones=' + condiciones +
-            '&validez=' + validez + '&entrega=' + entrega + '&vendedor=' + vendedor, 'Cotizacion', '', '500', '500',
-            'true');
-
+            '&empresa=' + empresa + '&direccion_cliente=' + direccion_cliente + '&tel2=' + tel2 + '&email=' + email
+            + '&condiciones=' + condiciones + '&validez=' + validez + '&entrega=' + entrega + '&vendedor=' + vendedor
+            + '&id_cliente=' + id_cliente + '&id_cliente=' + id_cliente + '&descuento=' + descuento, 'Cotizacion', '',
+            '700', '700', 'true');
     });
 </script>
 </body>
